@@ -12,9 +12,9 @@ import org.mortbay.jetty.webapp.WebAppContext;
  */
 public class Start {
 
-	public static final int PORT = 8087;
-	public static final String CONTEXT = "/gg";
-	public static final String BASE_URL = "http://localhost:8087/gg";
+	public static final int PORT = 8086;
+	public static final String CONTEXT = "/gw";
+	public static final String BASE_URL = "http://localhost:8086/gw";
 
 	public static void main(String[] args) throws Exception {
 		
