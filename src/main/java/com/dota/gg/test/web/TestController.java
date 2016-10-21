@@ -11,4 +11,9 @@ public class TestController {
 	public String getTestPage(){
 		return "/test/test";
 	}
+	
+	@RequestMapping(value = "/bootstrap")
+	public String bootstrapDemo(){
+		return "test/bootstrap";
+	}
 }

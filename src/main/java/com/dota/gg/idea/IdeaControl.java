@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/idea")
 public class IdeaControl {
 	
+	
+	
 	@RequestMapping(value = "/dennis")
 	public String gg(){
 		return "idea/dennis";
