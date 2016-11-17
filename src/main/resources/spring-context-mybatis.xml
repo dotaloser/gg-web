@@ -51,13 +51,15 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="c3p0DataSource" />
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
-		<property name="mapperLocations" value="classpath:/maps/**/*.xml" />
+		<property name="mapperLocations" value="classpath:/maps/*.xml" />
 	</bean>
 	
 	<!-- DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
         <property name="basePackage" value="com.dota.gg" />
+        <!-- 必须要指定注解，也可以自定义注解再指定 -->
+        <property name="annotationClass" value="org.mybatis.spring.annotation.MapperScan"/>
     </bean>
     
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->

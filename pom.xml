@@ -24,6 +24,11 @@
 	                 <source>${jdk.version}</source>
 	                 <target>${jdk.version}</target>
 	                 <showWarnings>true</showWarnings>
+	                 <encoding>UTF-8</encoding>
+	                 <compilerArguments>
+						<verbose />
+						<bootclasspath>${java.home}/lib/rt.jar</bootclasspath>
+					</compilerArguments>
 	             </configuration>
 	         </plugin> 
 	   </plugins>
