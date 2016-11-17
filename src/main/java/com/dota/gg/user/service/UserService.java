@@ -2,14 +2,14 @@ package com.dota.gg.user.service;
 
 import java.util.List;
 
-import com.dota.gg.user.entity.User;
+import com.dota.gg.user.entity.UserEntity;
 
 public interface UserService {
-	public int add(User user);
+	public int insert(UserEntity user);
 	
-	public int update(User user);
+	public int update(UserEntity user);
 	
-	public User getUser(Long id);
+	public int delete(UserEntity user);
 	
-	public List<User> getUsers();
+	public List<UserEntity> getUsers();
 }

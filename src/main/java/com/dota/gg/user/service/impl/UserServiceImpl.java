@@ -2,36 +2,37 @@ package com.dota.gg.user.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dota.gg.user.entity.User;
+import com.dota.gg.user.dao.UserDao;
+import com.dota.gg.user.entity.UserEntity;
 import com.dota.gg.user.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
 
+	@Autowired
+	UserDao userDao;
+	
 	@Override
-	public int add(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insert(UserEntity user) {
+		return userDao.insert(user);
 	}
 
 	@Override
-	public int update(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(UserEntity user) {
+		return userDao.update(user);
 	}
 
 	@Override
-	public User getUser(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public int delete(UserEntity user) {
+		return userDao.delete(user);
 	}
 
 	@Override
-	public List<User> getUsers() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<UserEntity> getUsers() {
+		return userDao.getUsers();
 	}
 
 }

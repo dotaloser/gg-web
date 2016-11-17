@@ -17,9 +17,10 @@
 	</div>
 	<div>
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000">Python</a></li>
-			<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git</a></li>
-			<li id="dota"><a href="#">Dota</a></li>
+			<li class="active"><a href="#">Python</a></li>
+			<li><a href="#">Node.js</a></li>
+			<li><a href="#">JavaScript</a></li>
+			<li><a href="#">Git</a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					Heros

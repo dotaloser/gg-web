@@ -4,21 +4,29 @@
 	xmlns:web="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	
-  <display-name>gw</display-name>
 
+	<display-name>gw</display-name>
 
-	 <!--configure the setting of springmvcDispatcherServlet and configure the mapping-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:/spring-context*.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!--configure the setting of springmvcDispatcherServlet and configure the 
+		mapping -->
 	<servlet>
-	    <servlet-name>springServlet</servlet-name>
-	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	    <init-param>
-	          <param-name>contextConfigLocation</param-name>
-	          <param-value>classpath:spring-mvc.xml</param-value>
-	      </init-param>
-	      <load-on-startup>1</load-on-startup>
+		<servlet-name>springServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
-	 
+
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -34,13 +42,13 @@
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping> 
-	
+	</filter-mapping>
+
 	<servlet-mapping>
-	    <servlet-name>springServlet</servlet-name>
-	    <url-pattern>/</url-pattern>
+		<servlet-name>springServlet</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<error-page>
 		<error-code>500</error-code>
 		<location>/WEB-INF/pages/error/500.jsp</location>
@@ -48,6 +56,6 @@
 	<error-page>
 		<error-code>404</error-code>
 		<location>/WEB-INF/pages/error/404.jsp</location>
-	</error-page> 
+	</error-page>
 
 </web-app>
