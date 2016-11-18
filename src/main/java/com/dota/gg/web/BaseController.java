@@ -1,8 +1,11 @@
 package com.dota.gg.web;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 
 /**
    * 描述：Controller 基类
@@ -17,4 +20,9 @@ public abstract class BaseController {
 	 */
 	@Value("${adminPath}")
 	protected String adminPath;
+	
+	@ModelAttribute
+	protected void preCall(){
+		System.out.println("I'm be called before the real function call");
+	}
 }

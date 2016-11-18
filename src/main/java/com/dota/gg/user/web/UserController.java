@@ -1,13 +1,14 @@
 package com.dota.gg.user.web;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dota.gg.user.entity.User;
 import com.dota.gg.user.service.UserService;
@@ -24,18 +25,15 @@ public class UserController extends BaseController{
 	
 	@Autowired
 	UserService userService;
-	
+
 	/**
 	   * 描述：fetch users via condition
 	   * @author: ning.li
 	   * @version: 2016年11月18日 下午1:53:26
 	 */
 	@RequestMapping(value = "/list")
-	public String usersPage(Model model, User condition){
-		List<User> users = userService.getUsers(condition);
-		model.addAttribute("condition", condition);
-		model.addAttribute("users", users);
-		return "user/list";
+	public ModelAndView usersPageModelAndView(@ModelAttribute("condition") User condition){
+		return new ModelAndView("user/list","users", userService.getUsers(condition));
 	}
 	
 	/**
