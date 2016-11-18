@@ -1,0 +1,15 @@
+button.btn{width:100px;padding:0!important;line-height:32px;}
+button.btn_main{background-color:#5aa6e6;color:#ffffff;}
+button.btn_main:hover{background-color:#4ca9f7;color:#ffffff;}
+button.btn_main:active{background-color:#418ccb;color:#ffffff;}
+button.btn_secondary{background-color:#ffffff;border:1px solid #d8d8d8;color:#666666;}
+button.btn_secondary:hover{background-color:#ffffff;border:1px solid #5aa6e6;color:#5aa6e6;}
+button.btn_secondary:active{background-color:#e8f4ff;border:1px solid #d8d8d8;color:#5aa6e6;}
+
+
+.ml6{margin-left:6px;}.ml16{margin-left:16px;}.ml26{margin-left:26px;}
+.mt-20{margin-top:20px;}
+.mt-40{margin-top:40px;}
+.mt-30{margin-top:30px;}
+
+.table>thead>tr>th{background-color:gray;}

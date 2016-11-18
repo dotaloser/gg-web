@@ -2,7 +2,7 @@ package com.dota.gg.user.entity;
 
 import java.util.Date;
 
-public class UserEntity {
+public class User {
 	private Long id;
 	private String userName;
 	private String nickName;

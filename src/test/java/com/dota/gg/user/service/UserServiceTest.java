@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.dota.gg.user.entity.UserEntity;
+import com.dota.gg.user.entity.User;
 
 import junit.framework.Assert;
 
@@ -23,7 +23,7 @@ public class UserServiceTest {
 	
 	@Test
 	public void testInsert() {
-		UserEntity userEntity = new UserEntity();
+		User userEntity = new User();
 		userEntity.setUserName("ted");
 		userEntity.setNickName("st");
 		userEntity.setPassword("123456");
@@ -46,8 +46,8 @@ public class UserServiceTest {
 
 	@Test
 	public void testGetUsers() {
-		List<UserEntity> users = userService.getUsers();
-		for (UserEntity userEntity : users) {
+		List<User> users = userService.getUsers(new User());
+		for (User userEntity : users) {
 			System.out.println(userEntity);
 		}
 	}

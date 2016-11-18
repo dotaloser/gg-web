@@ -1,54 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dota.gg.user.dao.UserDao" >
-  <resultMap id="BaseResultMap" type="com.dota.gg.user.entity.UserEntity" >
-    <result column="id" property="id" jdbcType="BIGINT" />
-    <result column="user_name" property="userName" jdbcType="VARCHAR" />
-    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-  </resultMap>
+<mapper namespace="com.dota.gg.user.dao.UserDao">
+	<resultMap id="BaseResultMap" type="com.dota.gg.user.entity.User">
+		<result column="id" property="id" jdbcType="BIGINT" />
+		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+		<result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+	</resultMap>
 
-  <select id="getUsers" resultMap="BaseResultMap">
-    select * from t_cus_user
-  </select>
+	<select id="getById" resultMap="BaseResultMap">
+		select * from t_cus_user where id=#{id}
+	</select>
 
-  <insert id="insert" parameterType="com.dota.gg.user.entity.UserEntity" >
-  	insert into t_cus_user(user_name,nick_name,password,create_time,phone,email) values(
-  		#{userName},
-  		#{nickName},
-  		#{password},
-  		#{createTime},
-  		#{phone},
-  		#{email}
-  	)
-  </insert>
-  
-  <update id="update" parameterType="com.dota.gg.user.entity.UserEntity" >
-  	update t_cus_user
-  		<set>
-  			<if test="userName!=null and userName!=''">
-  				user_name=#{userName},
-  			</if>
-  			<if test="nickName!=null and nickName!=''">
-  				nick_name=#{nickName},
-  			</if>
-  			<if test="password!=null and password!=''">
-  				password=#{password},
-  			</if>
-  			<if test="phone!=null and phone!=''">
-  				phone=#{phone},
-  			</if>
-  			<if test="email!=null and email!=''">
-  				email=#{email}
-  			</if>
-  		</set>
-  	where id=#{id}
-  </update>
-  
-  <delete id="delete" parameterType="com.dota.gg.user.entity.UserEntity" >
-  	delete from t_cus_user where id=#{id}
-  </delete>
+	<select id="getUsers" resultMap="BaseResultMap" parameterType="com.dota.gg.user.entity.User">
+		select * from t_cus_user
+			<where>
+				<if test="userName!=null and userName!=''">
+					user_name like "%"#{userName}"%"
+				</if>
+				<if test="phone!=null and phone!=''">
+					and phone like "%"#{phone}"%"
+				</if>
+			</where>
+	</select>
+
+	<insert id="insert" parameterType="com.dota.gg.user.entity.User">
+		insert into
+		t_cus_user(user_name,nick_name,password,create_time,phone,email)
+		values(
+		#{userName},
+		#{nickName},
+		#{password},
+		#{createTime},
+		#{phone},
+		#{email}
+		)
+	</insert>
+
+	<update id="update" parameterType="com.dota.gg.user.entity.User">
+		update t_cus_user
+		<set>
+			<if test="userName!=null and userName!=''">
+				user_name=#{userName},
+			</if>
+			<if test="nickName!=null and nickName!=''">
+				nick_name=#{nickName},
+			</if>
+			<if test="password!=null and password!=''">
+				password=#{password},
+			</if>
+			<if test="phone!=null and phone!=''">
+				phone=#{phone},
+			</if>
+			<if test="email!=null and email!=''">
+				email=#{email}
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+
+	<delete id="delete">
+		delete from t_cus_user where id=#{id}
+	</delete>
 </mapper>
