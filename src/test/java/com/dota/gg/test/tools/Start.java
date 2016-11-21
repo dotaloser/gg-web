@@ -20,6 +20,7 @@ public class Start {
 		
 		System.setProperty("java.awt.headless", "true");
 		Server server = buildDebugServer(PORT, CONTEXT);
+		System.out.println("The server gg-web start on port:"+PORT);
 		server.start();
 		server.join();
 	}

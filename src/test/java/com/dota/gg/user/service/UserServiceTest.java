@@ -15,7 +15,7 @@ import com.dota.gg.user.entity.User;
 import junit.framework.Assert;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:spring-context-mybatis.xml"})
+@ContextConfiguration(locations={"classpath:spring-context.xml"})
 public class UserServiceTest {
 
 	@Autowired
