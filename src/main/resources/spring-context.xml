@@ -23,8 +23,6 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	
-	<bean id="logAop" class="com.dota.gg.aop.LogAop"></bean>
-	
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> 
 	
 	<!-- c3p0数据连接池 -->
