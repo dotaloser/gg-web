@@ -42,9 +42,8 @@ public class UserController extends BaseController{
 	   * @version: 2016年11月18日 下午1:54:07
 	 */
 	@RequestMapping(value = "/add" , method = RequestMethod.GET)
-	public String addPage(Model model){
-		model.addAttribute("op", "添加");
-		return "user/add-update";
+	public ModelAndView addPage(){
+		return new ModelAndView("user/add-update","op", "添加");
 	}
 	
 	/**

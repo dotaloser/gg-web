@@ -13,3 +13,11 @@ button.btn_secondary:active{background-color:#e8f4ff;border:1px solid #d8d8d8;co
 .mt-30{margin-top:30px;}
 
 .table>thead>tr>th{background-color:gray;}
+
+/*æ”÷–*/
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
