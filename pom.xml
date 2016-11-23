@@ -20,9 +20,9 @@
 				<profiles.active>dev</profiles.active>
 				<webXmlPath>src/main/filter/dev/web.xml</webXmlPath>
 			</properties>
-			<!-- <activation>
+			<activation>
 				<activeByDefault>true</activeByDefault>
-			</activation> -->
+			</activation>
 		</profile>
 		<!-- 测试环境 -->
 		<profile>
@@ -31,7 +31,7 @@
 				<profiles.active>test</profiles.active>
 				<webXmlPath>src/main/filter/test/web.xml</webXmlPath>
 			</properties>
-			<activation> <activeByDefault>true</activeByDefault> </activation>
+			<!-- <activation> <activeByDefault>true</activeByDefault> </activation> -->
 		</profile>
 
 		<!-- 验证环境 -->
@@ -58,10 +58,13 @@
 
 	<build>
 		<finalName>gw</finalName>
-		<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/</outputDirectory>
+		<!-- <outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/</outputDirectory> -->
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>test/*</exclude>
+				</excludes>
 			</resource>
 			<resource>
 				<directory>src/main/filter/${profiles.active}</directory>
