@@ -21,3 +21,15 @@ button.btn_secondary:active{background-color:#e8f4ff;border:1px solid #d8d8d8;co
     margin-left: auto;
     margin-right: auto;
 }
+
+.navbar-default {
+    color: #fff;
+    background-color: #F0F8FF;
+}
+
+.navbar-brand{
+    padding:5px;
+}
+
+.navbar-nav{ font-family: Microsoft YaHei , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+.navbar-nav>li>a{ font-size:20px;}

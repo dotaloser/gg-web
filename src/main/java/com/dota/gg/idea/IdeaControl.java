@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
    * @version: 2016年10月20日 下午3:25:49
  */
 @Controller
-@RequestMapping(value = "/idea")
+@RequestMapping(value = "${adminPath}/idea")
 public class IdeaControl {
 	
 	

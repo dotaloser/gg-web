@@ -77,4 +77,9 @@ public class TestController {
 		}
 		return ajaxJson;
 	}
+	
+	@RequestMapping(value = "/nav")
+	public ModelAndView navTest(){
+		return new ModelAndView("nav/nav");
+	}
 }
