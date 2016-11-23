@@ -1,37 +1,95 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  
-  <parent>
-	<groupId>com.dota.gg</groupId>
-	<artifactId>gg-parent</artifactId>
-	<version>0.0.0-SNAPSHOT</version>
-  </parent>
-  
-  <modelVersion>4.0.0</modelVersion>
-  <artifactId>gg-web</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
- 
-  <build>
-  	  <finalName>gw</finalName>
-	  <plugins>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>com.dota.gg</groupId>
+		<artifactId>gg-parent</artifactId>
+		<version>0.0.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>gg-web</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<profiles>
+		<!-- 本地开发环境 -->
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profiles.active>dev</profiles.active>
+				<webXmlPath>src/main/filter/dev/web.xml</webXmlPath>
+			</properties>
+			<!-- <activation>
+				<activeByDefault>true</activeByDefault>
+			</activation> -->
+		</profile>
+		<!-- 测试环境 -->
+		<profile>
+			<id>test</id>
+			<properties>
+				<profiles.active>test</profiles.active>
+				<webXmlPath>src/main/filter/test/web.xml</webXmlPath>
+			</properties>
+			<activation> <activeByDefault>true</activeByDefault> </activation>
+		</profile>
+
+		<!-- 验证环境 -->
+		<profile>
+			<id>confirm</id>
+			<properties>
+				<profiles.active>confirm</profiles.active>
+				<webXmlPath>src/main/filter/confirm/web.xml</webXmlPath>
+			</properties>
+			<!-- <activation> <activeByDefault>true</activeByDefault> </activation> -->
+		</profile>
+
+		<!-- 生产环境 -->
+		<profile>
+			<id>pro</id>
+			<properties>
+				<profiles.active>pro</profiles.active>
+				<webXmlPath>src/main/filter/pro/web.xml</webXmlPath>
+			</properties>
+			<!-- <activation> <activeByDefault>true</activeByDefault> </activation> -->
+		</profile>
+
+	</profiles>
+
+	<build>
+		<finalName>gw</finalName>
+		<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/</outputDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/filter/${profiles.active}</directory>
+			</resource>
+		</resources>
+		<plugins>
 			<!-- compiler 插件, 设定JDK版本 -->
 			<plugin>
-	             <groupId>org.apache.maven.plugins</groupId>
-	             <artifactId>maven-compiler-plugin</artifactId>
-	             <version>3.1</version>
-	             <configuration>
-	                 <source>${jdk.version}</source>
-	                 <target>${jdk.version}</target>
-	                 <showWarnings>true</showWarnings>
-	                 <encoding>UTF-8</encoding>
-	                 <compilerArguments>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<showWarnings>true</showWarnings>
+					<encoding>UTF-8</encoding>
+					<compilerArguments>
 						<verbose />
 						<bootclasspath>${java.home}/lib/rt.jar</bootclasspath>
 					</compilerArguments>
-	             </configuration>
-	         </plugin> 
-	   </plugins>
-  </build>
-  
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- 项目属性 -->
+	<properties>
+		<!-- environment setting -->
+		<webXmlPath>src/main/filter/dev/web.xml</webXmlPath>
+	</properties>
 </project>

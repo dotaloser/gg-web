@@ -28,23 +28,23 @@ public class LogAop {
 	
 	@Before("anyMethod()")
 	public void before(JoinPoint point){
-		logger.info("@Before [方法：" + 
-                point.getSignature().getDeclaringTypeName() + 
-                "." + point.getSignature().getName()+", " + "参数：" + Arrays.toString(point.getArgs()) + "]");
+//		logger.info("@Before [方法：" + 
+//                point.getSignature().getDeclaringTypeName() + 
+//                "." + point.getSignature().getName()+", " + "参数：" + Arrays.toString(point.getArgs()) + "]");
 	}
 	
 	@After("anyMethod()")
 	public void after(JoinPoint point){
-		logger.info("@After [方法：" + 
-                point.getSignature().getDeclaringTypeName() + 
-                "." + point.getSignature().getName()+", " + "参数：" + Arrays.toString(point.getArgs()) + "]");
+//		logger.info("@After [方法：" + 
+//                point.getSignature().getDeclaringTypeName() + 
+//                "." + point.getSignature().getName()+", " + "参数：" + Arrays.toString(point.getArgs()) + "]");
 	}
 	
 	@AfterReturning(pointcut = "anyMethod()", returning = "retVal")
 	public void afterReturning(JoinPoint point, Object retVal){
-		logger.info("@AfterReturning [方法：" + 
-                point.getSignature().getDeclaringTypeName() + 
-                "." + point.getSignature().getName()+", 参数：" + Arrays.toString(point.getArgs()) + ", 返回值："+ retVal.toString() + "]");
+//		logger.info("@AfterReturning [方法：" + 
+//                point.getSignature().getDeclaringTypeName() + 
+//                "." + point.getSignature().getName()+", 参数：" + Arrays.toString(point.getArgs()) + ", 返回值："+ retVal.toString() + "]");
 	}
 	
 	@AfterThrowing(pointcut = "anyMethod()", throwing = "ex")
@@ -53,4 +53,5 @@ public class LogAop {
                 point.getSignature().getDeclaringTypeName() + 
                 "." + point.getSignature().getName()+", 参数：" + Arrays.toString(point.getArgs()) + ", 异常信息："+ ex.getMessage() + "]");
 	}
+	
 }
