@@ -53,5 +53,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<mvc:resources location="/ckeditor/" mapping="/ckeditor/**"/>
+	 
 	<mvc:view-controller path="/" view-name="redirect:${web.page.index}"/>
 </beans>

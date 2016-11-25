@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dota.gg.article.dao.ArticleDao">
+	<resultMap id="BaseResultMap" type="com.dota.gg.article.entity.Article">
+		<result column="id" property="id" jdbcType="BIGINT" />
+		<result column="author_id" property="authorId" jdbcType="BIGINT" />
+		<result column="catalog" property="catalog" jdbcType="VARCHAR" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="sub_title" property="subTitle" jdbcType="VARCHAR" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<select id="getAll" resultMap="BaseResultMap">
+		select * from t_cus_article
+	</select>
+
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select * from t_cus_article where id = #{id}
+	</select>
+	
+</mapper>

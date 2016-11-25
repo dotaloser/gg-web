@@ -82,4 +82,9 @@ public class TestController {
 	public ModelAndView navTest(){
 		return new ModelAndView("nav/nav");
 	}
+	
+	@RequestMapping(value = "/ckeditor")
+	public ModelAndView ckEditor(){
+		return new ModelAndView("ckeditor/samples/index.html");
+	}
 }
