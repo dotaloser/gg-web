@@ -45,6 +45,8 @@ public class ArticleController extends BaseController{
 	public ModelAndView uploadPic(@RequestParam(value = "upload", required = false) MultipartFile file ){
 		String fileName = file.getOriginalFilename();
 		try {
+			String root = System.getProperty("gw.root");
+			logger.info("gw.root:" + root);
 			file.transferTo(new File(fileName));
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block

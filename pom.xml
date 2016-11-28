@@ -24,36 +24,6 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>
-		<!-- 测试环境 -->
-		<profile>
-			<id>test</id>
-			<properties>
-				<profiles.active>test</profiles.active>
-				<webXmlPath>src/main/filter/test/web.xml</webXmlPath>
-			</properties>
-			<!-- <activation> <activeByDefault>true</activeByDefault> </activation> -->
-		</profile>
-
-		<!-- 验证环境 -->
-		<profile>
-			<id>confirm</id>
-			<properties>
-				<profiles.active>confirm</profiles.active>
-				<webXmlPath>src/main/filter/confirm/web.xml</webXmlPath>
-			</properties>
-			<!-- <activation> <activeByDefault>true</activeByDefault> </activation> -->
-		</profile>
-
-		<!-- 生产环境 -->
-		<profile>
-			<id>pro</id>
-			<properties>
-				<profiles.active>pro</profiles.active>
-				<webXmlPath>src/main/filter/pro/web.xml</webXmlPath>
-			</properties>
-			<!-- <activation> <activeByDefault>true</activeByDefault> </activation> -->
-		</profile>
-
 	</profiles>
 
 	<build>
