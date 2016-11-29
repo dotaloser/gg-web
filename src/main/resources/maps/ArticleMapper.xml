@@ -20,4 +20,10 @@
 		select * from t_cus_article where id = #{id}
 	</select>
 	
+	<insert id="add" parameterType="com.dota.gg.article.entity.Article">
+		insert into t_cus_article(author_id,catalog,title,sub_title,content,description,create_time,modify_time) values(
+			#{authorId},#{catalog},#{title},#{subTitle},#{content},#{description},#{createTime},#{modifyTime}
+		)
+	</insert>
+	
 </mapper>

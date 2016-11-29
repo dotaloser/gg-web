@@ -27,16 +27,21 @@
 		</div>
 	</div>
 	   
-	<form>
-            <textarea name="editor1" id="editor1" rows="10" cols="80" style="height: 1600px;">
-                This is my textarea to be replaced with CKEditor.
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-               CKEDITOR.replace( 'editor1' );
-            </script>
-        </form>
+	<form method="post" action="${ctxAP }/article/add">
+		<label>类别: </label><input type="text" name="catalog">
+		<label>标题: </label><input type="text" name="title">
+		<label>子标题: </label><input type="text" name="subTitle">
+		<label>描述: </label><input type="text" name="description">
+        <textarea name="content" id="content" rows="10" cols="80" style="height: 1600px;">
+            This is my textarea to be replaced with CKEditor.
+        </textarea>
+        <script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+           CKEDITOR.replace( 'content' );
+        </script>
+        <input type="submit" value="提交"></input>
+    </form>
 	
 </div>
 </body>

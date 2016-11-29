@@ -14,4 +14,6 @@ public interface ArticleService {
 	public Article getById(Long id);
 	
 	public List<Article> getAll();
+	
+	public boolean add(Article article);
 }

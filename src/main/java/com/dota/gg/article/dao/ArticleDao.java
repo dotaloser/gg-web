@@ -17,4 +17,6 @@ public interface ArticleDao {
 	public List<Article> getAll();
 	
 	public Article getById(Long id);
+	
+	public int add(Article article);
 }

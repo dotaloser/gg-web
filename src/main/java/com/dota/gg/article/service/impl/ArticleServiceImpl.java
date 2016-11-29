@@ -1,5 +1,6 @@
 package com.dota.gg.article.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,14 @@ public class ArticleServiceImpl implements ArticleService{
 	@Override
 	public List<Article> getAll() {
 		return articleDao.getAll();
+	}
+
+	@Override
+	public boolean add(Article article) {
+		article.setAuthorId(1L);
+		article.setCreateTime(new Date());
+		article.setModifyTime(new Date());
+		return articleDao.add(article) == 1;
 	}
 
 }
