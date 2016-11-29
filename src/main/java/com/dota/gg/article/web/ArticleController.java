@@ -53,6 +53,17 @@ public class ArticleController extends BaseController{
 		return getList();
 	}
 	
+	@RequestMapping(value = "/edit/{id}")
+	public ModelAndView editPage(@PathVariable Long id){
+		return new ModelAndView("article/add", "article", articleService.getById(id));
+	}
+	
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+	public ModelAndView edit(@PathVariable Long id, Article article){
+		articleService.update(article);
+		return getList();
+	}
+	
 	@RequestMapping(value = "/test")
 	public ModelAndView test(){
 		return new ModelAndView("article/test");

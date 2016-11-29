@@ -20,10 +20,35 @@
 		select * from t_cus_article where id = #{id}
 	</select>
 	
-	<insert id="add" parameterType="com.dota.gg.article.entity.Article">
+	<insert id="insert" parameterType="com.dota.gg.article.entity.Article">
 		insert into t_cus_article(author_id,catalog,title,sub_title,content,description,create_time,modify_time) values(
 			#{authorId},#{catalog},#{title},#{subTitle},#{content},#{description},#{createTime},#{modifyTime}
 		)
 	</insert>
+	
+	<update id="update" parameterType="com.dota.gg.article.entity.Article">
+		update t_cus_article
+		<set>
+			<if test="catalog!=null and catalog!=''">
+				catalog = #{catalog},
+			</if>
+			<if test="title!=null and title!=''">
+				title = #{title},
+			</if>
+			<if test="subTitle!=null and subTitle!=''">
+				sub_title = #{subTitle},
+			</if>
+			<if test="content!=null and content!=''">
+				content = #{content},
+			</if>
+			<if test="description!=null and description!=''">
+				description = #{description},
+			</if>
+			<if test="modifyTime!=null">
+				modify_time = #{modifyTime}
+			</if>
+		</set>
+		where id = #{id}
+	</update>
 	
 </mapper>

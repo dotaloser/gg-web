@@ -18,5 +18,7 @@ public interface ArticleDao {
 	
 	public Article getById(Long id);
 	
-	public int add(Article article);
+	public int insert(Article article);
+	
+	public int update(Article article);
 }

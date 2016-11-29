@@ -16,4 +16,6 @@ public interface ArticleService {
 	public List<Article> getAll();
 	
 	public boolean add(Article article);
+	
+	public boolean update(Article article);
 }

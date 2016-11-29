@@ -26,5 +26,5 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	config.filebrowserImageUploadUrl = ctxAP + '/article/uploadPic';
 	
-	//config.extraPlugins = 'uploadimage,image2';
+	config.extraPlugins = 'clipboard,lineutils,widget,dialog,codesnippet';
 };

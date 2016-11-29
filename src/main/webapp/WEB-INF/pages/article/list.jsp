@@ -42,6 +42,7 @@
 	        <h2>${ article.title}----${ article.subTitle}</h2>
 	        <p>${ article.description}</p>
 	        <p><a class="btn" href="${ctxAP }/article/${article.id}">View details &raquo;</a></p>
+	        <p><a class="btn" href="${ctxAP }/article/edit/${article.id}">修改 &raquo;</a></p>
       	</div>
       </c:forEach>
     </div>

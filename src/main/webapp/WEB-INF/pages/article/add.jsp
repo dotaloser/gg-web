@@ -27,17 +27,15 @@
 		</div>
 	</div>
 	   
-	<form method="post" action="${ctxAP }/article/add">
-		<label>类别: </label><input type="text" name="catalog">
-		<label>标题: </label><input type="text" name="title">
-		<label>子标题: </label><input type="text" name="subTitle">
-		<label>描述: </label><input type="text" name="description">
-        <textarea name="content" id="content" rows="10" cols="80" style="height: 1600px;">
-            This is my textarea to be replaced with CKEditor.
+	<form method="post">
+		<label>类别: </label><input type="text" name="catalog" value="${article.catalog }">
+		<label>标题: </label><input type="text" name="title" value="${article.title }">
+		<label>子标题: </label><input type="text" name="subTitle" value="${article.subTitle }">
+		<label>描述: </label><input type="text" name="description" value="${article.description }">
+        <textarea name="content" id="content" rows="10" cols="80" style="height: 1600px;" >
+        	${article.content }
         </textarea>
         <script>
-            // Replace the <textarea id="editor1"> with a CKEditor
-            // instance, using default configuration.
            CKEDITOR.replace( 'content' );
         </script>
         <input type="submit" value="提交"></input>

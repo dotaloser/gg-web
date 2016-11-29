@@ -31,7 +31,13 @@ public class ArticleServiceImpl implements ArticleService{
 		article.setAuthorId(1L);
 		article.setCreateTime(new Date());
 		article.setModifyTime(new Date());
-		return articleDao.add(article) == 1;
+		return articleDao.insert(article) == 1;
+	}
+
+	@Override
+	public boolean update(Article article) {
+		article.setModifyTime(new Date());
+		return articleDao.update(article) == 1;
 	}
 
 }
