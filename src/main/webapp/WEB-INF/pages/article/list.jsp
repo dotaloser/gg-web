@@ -9,32 +9,24 @@
 <title>从入门到gg</title>
 </head>
 <body>
-<div class="container">
-
-	<div class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <img alt="Brand"
-					src="${ctx }/image/cat.png" height="40px">
-				</a>
-			</div>
-			<div>
+			<img class="logoimage" alt="gg" src="${ctx }/image/cat.png" height="50px">
+			<div id="navbar" class="collapse navbar-collapse nav-menu">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Java</a></li>
-					<li><a href="#">Waiting</a></li>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">登录</a></li>
 				</ul>
 			</div>
 		</div>
-	</div>
-	
-	<!-- Jumbotron -->
-    <div class="jumbotron">
-      <h1>From begin to GG</h1>
-      <p class="lead">GG doesn't mean give up, maybe better view when standing on those giant's shoulder.</p>
-    </div>
-      
-    <hr>
-    
+</nav>
+
+<header class="jumbotron site-header">
+	<h1>From begin to GG</h1>
+    <p class="lead">GG doesn't mean give up, maybe better view when standing on those giant's shoulder.</p>
+</header>
+
+<div class="container">
     <!-- Example row of columns -->
     <div class="row-fluid">
       <c:forEach items="${ articles}" var="article">
