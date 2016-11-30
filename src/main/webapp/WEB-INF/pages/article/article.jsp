@@ -30,19 +30,14 @@
 	</div>
 	   
 	<!-- Example row of columns -->
-    <div class="row">
-      	<div class="col-sm-8 blog-main">
+    <div class="row-fluid">
           <div class="blog-post">
             <h2 class="blog-post-title">${article.title }----${article.subTitle }</h2>
             <p class="blog-post-meta"><a href="#">${article.authorId }</a> 发表于： ${fns:formatDate(article.createTime, "yyyy-MM-dd") } </p>
-            
             <p>简述：${article.description }</p>
-            
             <hr>
-            
             <p>${article.content }</p>
           </div>
-        </div>
     </div>
 </div>
 <script type="text/javascript">
@@ -51,7 +46,7 @@ $(document).ready(function() {
 	    hljs.highlightBlock(block);
 	  });
 	});
-/* $(function(){
+/* $(function(){ this does not work...
 	hljs.initHighlightingOnLoad();
 });  */
 </script>

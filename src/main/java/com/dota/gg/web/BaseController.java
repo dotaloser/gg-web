@@ -23,6 +23,6 @@ public abstract class BaseController {
 	
 	@ModelAttribute
 	protected void preCall(){
-		//System.out.println("I'm be called before the real function call");
+		//logger.info("I'm be called before the real function call");
 	}
 }
