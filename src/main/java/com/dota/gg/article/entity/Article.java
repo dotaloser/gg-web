@@ -23,6 +23,8 @@ public class Article implements Serializable{
 	private Date createTime;
 	private Date modifyTime;
 	
+	private String highlightStyle;
+	
 	public Long getId() {
 		return id;
 	}
@@ -76,6 +78,12 @@ public class Article implements Serializable{
 	}
 	public void setModifyTime(Date modifyTime) {
 		this.modifyTime = modifyTime;
+	}
+	public String getHighlightStyle() {
+		return highlightStyle;
+	}
+	public void setHighlightStyle(String highlightStyle) {
+		this.highlightStyle = highlightStyle;
 	}
 
 //	private Boolean isFirstArticle;

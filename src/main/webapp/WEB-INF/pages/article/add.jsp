@@ -26,12 +26,15 @@
 			</div>
 		</div>
 	</div>
-	   
+	
+	
+	
 	<form method="post">
 		<label>类别: </label><input type="text" name="catalog" value="${article.catalog }">
 		<label>标题: </label><input type="text" name="title" value="${article.title }">
 		<label>子标题: </label><input type="text" name="subTitle" value="${article.subTitle }">
 		<label>描述: </label><input type="text" name="description" value="${article.description }">
+		<select id="select" name="highlightStyle"></select>
         <textarea name="content" id="content" rows="10" cols="80" style="height: 1600px;" >
         	${article.content }
         </textarea>
@@ -42,5 +45,6 @@
     </form>
 	
 </div>
+<script type="text/javascript" src="${ctx }/js/highlight-theme.js"></script>
 </body>
 </html>

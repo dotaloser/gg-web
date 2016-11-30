@@ -27,4 +27,11 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserImageUploadUrl = ctxAP + '/article/uploadPic';
 	
 	config.extraPlugins = 'clipboard,lineutils,widget,dialog,codesnippet';
+	
+	config.codeSnippet_languages = {
+			java: 'java',
+			cpp: 'c++',
+		    javascript: 'JavaScript',
+		    php: 'PHP'
+		};
 };

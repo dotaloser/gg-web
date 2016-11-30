@@ -7,6 +7,8 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <%@ include file="/WEB-INF/pages/include/core.jsp"%>
 <link href="${ctx}/css/article/blog.css" rel="stylesheet">
+<link href="${ctx}/ckeditor/plugins/codesnippet/lib/highlight/styles/${article.highlightStyle }.css" rel="stylesheet">
+<script src="${ctx}/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
 <title>从入门到gg</title>
 </head>
 <body>
@@ -43,5 +45,15 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+	});
+/* $(function(){
+	hljs.initHighlightingOnLoad();
+});  */
+</script>
 </body>
 </html>

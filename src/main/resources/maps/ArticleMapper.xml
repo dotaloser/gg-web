@@ -10,6 +10,7 @@
 		<result column="description" property="description" jdbcType="VARCHAR" />
 		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
 		<result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+		<result column="highlight_style" property="highlightStyle" jdbcType="TIMESTAMP" />
 	</resultMap>
 
 	<select id="getAll" resultMap="BaseResultMap">
@@ -21,8 +22,8 @@
 	</select>
 	
 	<insert id="insert" parameterType="com.dota.gg.article.entity.Article">
-		insert into t_cus_article(author_id,catalog,title,sub_title,content,description,create_time,modify_time) values(
-			#{authorId},#{catalog},#{title},#{subTitle},#{content},#{description},#{createTime},#{modifyTime}
+		insert into t_cus_article(author_id,catalog,title,sub_title,content,description,create_time,modify_time,highlight_style) values(
+			#{authorId},#{catalog},#{title},#{subTitle},#{content},#{description},#{createTime},#{modifyTime},#{highlightStyle}
 		)
 	</insert>
 	
@@ -45,7 +46,10 @@
 				description = #{description},
 			</if>
 			<if test="modifyTime!=null">
-				modify_time = #{modifyTime}
+				modify_time = #{modifyTime},
+			</if>
+			<if test="highlightStyle!=null and highlightStyle!=''">
+				highlight_style = #{highlightStyle}
 			</if>
 		</set>
 		where id = #{id}
