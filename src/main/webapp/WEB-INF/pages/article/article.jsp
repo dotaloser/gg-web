@@ -12,55 +12,41 @@
 <title>从入门到gg</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<section class="bg-img">
+<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Project name</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
+			<img class="logoimage" alt="gg" src="${ctx }/image/cat.png" height="50px">
+			<div id="navbar" class="nav-menu fl p100">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
-	<div class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <img alt="Brand"
-					src="${ctx }/image/cat.png" height="40px">
-				</a>
-			</div>
-			<div>
-				<ul class="nav navbar-bar nav-menu">
 					<li><a href="#">Java</a></li>
-					<li><a href="#">Waiting</a></li>
+				</ul>
+			</div>
+			<div id="navbar" class="nav-menu fr">
+				<ul class="nav navbar-nav">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">登录</a></li>
 				</ul>
 			</div>
 		</div>
+</nav>
+
+	<div class="container article-frame">
+		<div class="row">
+			<h2 class="article-title">${article.title }----${article.subTitle }</h2>
+		</div>	
+		<div class="row">
+			  <p class="fr article-info">${article.authorId } 发表于： ${fns:formatDate(article.createTime, "yyyy-MM-dd") } </p>
+		</div>
+		<hr>	
+		<div class="row row-desc">
+			  <p class="article-desc">简述：${article.description }</p>
+		</div>	
+	    <hr>	     
+	    <div class="row">
+	    	<div class="article-content">${article.content }</div>
+	    </div>
 	</div>
-	   
-	<!-- Example row of columns -->
-    <div class="row-fluid">
-          <div class="blog-post">
-            <h2 class="blog-post-title">${article.title }----${article.subTitle }</h2>
-            <p class="blog-post-meta"><a href="#">${article.authorId }</a> 发表于： ${fns:formatDate(article.createTime, "yyyy-MM-dd") } </p>
-            <p>简述：${article.description }</p>
-            <hr>
-            <p>${article.content }</p>
-          </div>
-    </div>
-</div>
+</section>
 <script type="text/javascript">
 $(document).ready(function() {
 	  $('pre code').each(function(i, block) {
