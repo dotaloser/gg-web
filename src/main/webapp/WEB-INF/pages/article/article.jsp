@@ -13,23 +13,23 @@
 </head>
 <body>
 <section class="bg-img">
-<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<img class="logoimage" alt="gg" src="${ctx }/image/cat.png" height="50px">
-			<div id="navbar" class="nav-menu fl p100">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Java</a></li>
-				</ul>
+	<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<img class="logoimage" alt="gg" src="${ctx }/image/cat.png" height="50px">
+				<div id="navbar" class="nav-menu fl p100">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Java</a></li>
+					</ul>
+				</div>
+				<div id="navbar" class="nav-menu fr">
+					<ul class="nav navbar-nav">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">登录</a></li>
+					</ul>
+				</div>
 			</div>
-			<div id="navbar" class="nav-menu fr">
-				<ul class="nav navbar-nav">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">登录</a></li>
-				</ul>
-			</div>
-		</div>
-</nav>
-
+	</nav>
+	
 	<div class="container article-frame">
 		<div class="row">
 			<h2 class="article-title">${article.title }----${article.subTitle }</h2>
@@ -46,7 +46,14 @@
 	    	<div class="article-content">${article.content }</div>
 	    </div>
 	</div>
+	
 </section>
+
+<footer class="footer">
+     <div class="container">
+       <p>&copy; Company 2013</p>
+     </div>
+</footer>
 <script type="text/javascript">
 $(document).ready(function() {
 	  $('pre code').each(function(i, block) {

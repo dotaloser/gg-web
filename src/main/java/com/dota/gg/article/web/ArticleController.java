@@ -1,7 +1,6 @@
 package com.dota.gg.article.web;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -44,7 +43,7 @@ public class ArticleController extends BaseController{
 
 	@RequestMapping(value = "/add")
 	public ModelAndView addPage(){
-		return new ModelAndView("article/add");
+		return new ModelAndView("article/add-update", "op", "发表");
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -55,18 +54,14 @@ public class ArticleController extends BaseController{
 	
 	@RequestMapping(value = "/edit/{id}")
 	public ModelAndView editPage(@PathVariable Long id){
-		return new ModelAndView("article/add", "article", articleService.getById(id));
+		return new ModelAndView("article/add-update", "article", articleService.getById(id)).
+				addObject( "op", "修改");
 	}
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
 	public ModelAndView edit(@PathVariable Long id, Article article){
 		articleService.update(article);
 		return getList();
-	}
-	
-	@RequestMapping(value = "/test")
-	public ModelAndView test(){
-		return new ModelAndView("article/test");
 	}
 	
 	@RequestMapping(value = "/uploadPic")
@@ -82,12 +77,8 @@ public class ArticleController extends BaseController{
 			out.println("window.parent.CKEDITOR.tools.callFunction(" + callback
 					+ ",'" + request.getContextPath() + "/uploadImage/" + fileName + "','')");
 			out.println("</script>");
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
 		}
 	}
 }
