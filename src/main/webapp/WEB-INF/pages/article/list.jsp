@@ -31,8 +31,8 @@
 	<h1>From begin to GG</h1>
     <p class="lead">GG doesn't mean give up, maybe better view when standing on those giant's shoulder.</p>
 </header>
-<section class="bg-img">
-	<div class="container">
+<section class="bg-img main">
+	<div class="container ">
 	    <c:forEach items="${ articles}" var="article">
 		   	 	<div class="row margin-lr-0">
 		    		<h2><a href="${ctxAP }/article/${article.id}">${ article.title}<span style="color:#8080c0">———</span>${ article.subTitle} </a></h2>

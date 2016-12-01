@@ -30,7 +30,7 @@
 			</div>
 	</nav>
 	
-	<div class="container article-frame">
+	<div class="container article-frame height-full">
 		<div class="row">
 			<h2 class="article-title">${article.title }----${article.subTitle }</h2>
 		</div>	
