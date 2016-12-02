@@ -54,7 +54,9 @@ public class ArticleController extends BaseController{
 	
 	@RequestMapping(value = "/edit/{id}")
 	public ModelAndView editPage(@PathVariable Long id){
-		return new ModelAndView("article/add-update", "article", articleService.getById(id)).
+		Article article = articleService.getById(id);
+		logger.info(article.toString());
+		return new ModelAndView("article/add-update", "article", article).
 				addObject( "op", "修改");
 	}
 	

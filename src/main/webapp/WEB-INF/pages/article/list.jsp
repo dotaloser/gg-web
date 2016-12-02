@@ -46,7 +46,7 @@
 	</div> <!-- /container -->
 </section>
 
-<footer class="footer">
+<!-- <footer class="footer">
      <div class="container">
        <p>&copy; Company 2013</p>
        
@@ -60,7 +60,7 @@
 			</div>
 		</div>
      </div>
-</footer>
+</footer> -->
 
 <script>
 $(function(){

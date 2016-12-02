@@ -31,7 +31,19 @@ CKEDITOR.editorConfig = function( config ) {
 	config.codeSnippet_languages = {
 			java: 'java',
 			cpp: 'c++',
+			cs: 'C#',
 		    javascript: 'JavaScript',
-		    php: 'PHP'
+		    php: 'PHP',
+			css: 'CSS',
+			html: 'HTML',
+			javascript: 'JavaScript',
+			json: 'JSON',
+			objectivec: 'Objective-C',
+			perl: 'Perl',
+			php: 'PHP',
+			python: 'Python',
+			ruby: 'Ruby',
+			sql: 'SQL',
+			xml: 'XML'
 		};
 };

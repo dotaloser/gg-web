@@ -76,13 +76,10 @@
 			   <textarea name="content" id="content" rows="10" cols="80" style="height: 1600px;" >
 			      ${article.content }
 			    </textarea>
-			<script>
-			CKEDITOR.replace( 'content' );
-			</script>
 			<div class="form-group mt30">
 				<label class="col-sm-10 control-label"></label>
 				<div class="col-sm-1">
-				 	<button id="operation" type="button" class="btn btn-success">${op}</button>
+				 	<button id="operation" type="submit" class="btn btn-success">${op}</button>
 		    	</div>
 		    	<div class="col-sm-1">
 					<button  id="hdGoBack" type="button" class="btn btn-warning" >返回</button>
@@ -99,5 +96,34 @@
 	
 </section>
 <script type="text/javascript" src="${ctx }/js/highlight-theme.js"></script>
+<script>
+	$(function(){
+		CKEDITOR.replace( 'content' );
+	});
+	htmlParser = CKEDITOR.instances.content.dataProcessor.htmlFilter;
+
+    //We don't want HTML encoding on smarty tags
+    //so we need to change things in curly brackets
+    htmlParser.onText = function(text) {
+            //find all bits in curly brackets                       
+            var matches = text.match(/\{([^}]+)\}/g);
+
+            //go through each match and replace the encoded characters
+            if (matches!=null) {
+                for (match in matches) {    
+
+                    var replacedString=matches[match];
+                    replacedString = matches[match].replace(/&gt;/g,'>');
+                    replacedString = replacedString.replace(/&lt;/g,'<');
+                    replacedString = replacedString.replace(/&amp;/g,'&'); 
+
+                    text = text.replace(matches[match],replacedString);
+                    }
+            }
+			console.log(text);
+            return text;
+
+    }
+</script>
 </body>
 </html>
