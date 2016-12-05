@@ -100,30 +100,6 @@
 	$(function(){
 		CKEDITOR.replace( 'content' );
 	});
-	htmlParser = CKEDITOR.instances.content.dataProcessor.htmlFilter;
-
-    //We don't want HTML encoding on smarty tags
-    //so we need to change things in curly brackets
-    htmlParser.onText = function(text) {
-            //find all bits in curly brackets                       
-            var matches = text.match(/\{([^}]+)\}/g);
-
-            //go through each match and replace the encoded characters
-            if (matches!=null) {
-                for (match in matches) {    
-
-                    var replacedString=matches[match];
-                    replacedString = matches[match].replace(/&gt;/g,'>');
-                    replacedString = replacedString.replace(/&lt;/g,'<');
-                    replacedString = replacedString.replace(/&amp;/g,'&'); 
-
-                    text = text.replace(matches[match],replacedString);
-                    }
-            }
-			console.log(text);
-            return text;
-
-    }
 </script>
 </body>
 </html>

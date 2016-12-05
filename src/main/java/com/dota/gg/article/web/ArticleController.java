@@ -55,7 +55,8 @@ public class ArticleController extends BaseController{
 	@RequestMapping(value = "/edit/{id}")
 	public ModelAndView editPage(@PathVariable Long id){
 		Article article = articleService.getById(id);
-		logger.info(article.toString());
+		//do this to fix the problem in ckeditor: when the content has &lt;, it's has some problem
+		article.setContent(article.getContent().replace("&", "&amp;"));
 		return new ModelAndView("article/add-update", "article", article).
 				addObject( "op", "修改");
 	}
