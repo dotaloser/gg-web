@@ -47,9 +47,9 @@ public class ArticleController extends BaseController{
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ModelAndView add(Article article){
+	public String add(Article article){
 		articleService.add(article);
-		return getList();
+		return "redirect:" + adminPath + "/article/list";
 	}
 	
 	@RequestMapping(value = "/edit/{id}")
@@ -64,7 +64,7 @@ public class ArticleController extends BaseController{
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
 	public ModelAndView edit(@PathVariable Long id, Article article){
 		articleService.update(article);
-		return getList();
+		return new ModelAndView("redirect:" + adminPath + "/article/list");
 	}
 	
 	@RequestMapping(value = "/uploadPic")
