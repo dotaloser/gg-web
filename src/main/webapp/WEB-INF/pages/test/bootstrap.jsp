@@ -1,89 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/pages/include/taglib.jsp"%>
-<!DOCTYPE html>
-<html lang="en">
+    pageEncoding="utf-8"%>
+    <%@ include file="/WEB-INF/pages/include/taglib.jsp"%>
+    <!DOCTYPE html>
+<html>
 <head>
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<!-- Bootstrap -->
-<%@ include file="/WEB-INF/pages/include/core.jsp"%>
-<title>BootStrap Demos</title>
+  <title>Bootstrap 实例</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<%@ include file="/WEB-INF/pages/include/core.jsp"%>
 </head>
-<body>
-	<div class="container">
-		<h1>Twitter bootstrap tutorial</h1>
-		<nav class="navbar navbar-inverse">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar-menu"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Brand</a>
-			</div>
-			<div id="navbar-menu" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Page One</a></li>
-					<li><a href="#">Page Two</a></li>
-				</ul>
-			</div>
-		</nav>
+ <body>
+    <div class="container">
+      <h2>表格</h2>
+      <p>创建响应式表格 (将在小于768px的小型设备下水平滚动)。另外：添加交替单元格的背景色：</p>      
+      <div class="table-responsive">          
+       <table class="table table-striped table-bordered">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>Name</th>
+             <th>Street</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>1</td>
+             <td>Anna Awesome</td>
+             <td>Broome Street</td>
+           </tr>
+           <tr>
+             <td>2</td>
+             <td>Debbie Dallas</td>
+             <td>Houston Street</td>
+           </tr>
+           <tr>
+             <td>3</td>
+             <td>John Doe</td>
+             <td>Madison Street</td>
+           </tr>
+         </tbody>
+       </table>
+      </div>
 
-		<div id="content" class="row-fluid">
-			<div class="col-md-9">
-				<h2>Main Content Section</h2>
-				<p>Licensed to the Apache Software Foundation (ASF) under one
-KIND, either express or implied.  See the License for the
-specific language governing permissions and limitations
-under the License.<p>
-<img src="${ctx }/uploadImage/Desert.jpg" alt="哈哈" height="300">
-			</div>
-			<div class="col-md-3">
-				<h2>R Sidebar</h2>
-				<ul class="nav nav-tabs nav-stacked">
-					<li><a href='#'>Another Link 1</a></li>
-					<li><a href='#'>Another Link 2</a></li>
-					<li><a href='#'>Another Link 3</a></li>
-				</ul>
-			</div>
-		</div>
+      <h2>图像</h2>
+      <p>创建相应式图片(将扩展到父元素)。 另外：图片以椭圆型展示：</p>            
+      <img src="../../uploadImage/Desert.jpg" class="img-responsive img-circle" alt="Cinque Terre" width="104" height="136"> 
+      
+      <h2>图标</h2>
+      <p>插入图标:</p>      
+      <p>云图标: <span class="glyphicon glyphicon-cloud"></span></p>      
+      <p>信件图标: <span class="glyphicon glyphicon-envelope"></span></p>            
+      <p>搜索图标: <span class="glyphicon glyphicon-search"></span></p>
+      <p>打印图标: <span class="glyphicon glyphicon-print"></span></p>      
+      <p>下载图标：<span class="glyphicon glyphicon-download"></span></p>      
+    </div>
 
-		<div class="row">
-			<div class="col-md-4">.col-md-4</div>
-			<div class="col-md-8">.col-md-8</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">.col-md-4</div>
-			<div class="col-md-4">.col-md-4</div>
-			<div class="col-md-4">.col-md-4</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">.col-md-3</div>
-			<div class="col-md-6">.col-md-6</div>
-			<div class="col-md-3">.col-md-3</div>
-		</div>
-		<div class="row">
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-			<div class="col-md-1">.col-md-1</div>
-		</div>
-	</div>
-
-
-</body>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
